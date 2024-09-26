@@ -50,7 +50,7 @@
 ```lisp 
 ;;Пункт 1
 (defvar taskone-list nil)
-(setq taskone-list (list 's 1 (list 1 2) () 's1))
+(setq taskone-list (list 'a 1 (list 1 2) () 'b))
 (format t "~a~%" taskone-list)
 
 ;;Пункт 2
@@ -88,21 +88,22 @@
 ;;Пункт 8
 (defvar sublist (nth 2 taskone-list))
 (defvar combined-list (append taskone-list sublist))
-(format t "~a~%" combined-list)
+(defvar main-list)
 ```
 
 #### Результати тестування
 
 ```lisp 
-(S 1 (1 2) NIL S1)
-S
-(1 (1 2) NIL S1)
+(A 1 (1 2) NIL B)
+A
+(1 (1 2) NIL B)
 (1 2)
-S1
+B
 First elem check: T
 Third elem check: NIL
 Fourth elem check T
-List check: Third elem check: T
+List check: NIL
+Third elem check: T
 Fourth elem check: T
 Fourth elem check: NIL
 Is 1 equal to zero? NIL
@@ -116,9 +117,10 @@ Is 1 equal to zero? NIL
 ```lisp
 (setq sublist (list 3 'c 'b))
 (setq main-list (list 1 'a (last sublist) sublist))
+(format t "~a~%" main-list)
 ```
 
 #### Результати тестування
 ```lisp 
-(S 1 (1 2) NIL S1 1 2)
+(1 A (B) (3 C B))
 ```
