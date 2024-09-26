@@ -90,6 +90,24 @@
 (defvar combined-list (append taskone-list sublist))
 (format t "~a~%" combined-list)
 ```
+
+#### Результати тестування
+
+```lisp 
+(S 1 (1 2) NIL S1)
+S
+(1 (1 2) NIL S1)
+(1 2)
+S1
+First elem check: T
+Third elem check: NIL
+Fourth elem check T
+List check: Third elem check: T
+Fourth elem check: T
+Fourth elem check: NIL
+Is 1 equal to zero? NIL
+```
+
 ## Варіант 3
 <p align="center">
 <img src="lab-1-variant3.png">
@@ -98,4 +116,9 @@
 ```lisp
 (setq sublist (list 3 'c 'b))
 (setq main-list (list 1 'a (last sublist) sublist))
+```
+
+#### Результати тестування
+```lisp 
+(S 1 (1 2) NIL S1 1 2)
 ```
