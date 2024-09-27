@@ -88,7 +88,7 @@
 ;;Пункт 8
 (defvar sublist (nth 2 taskone-list))
 (defvar combined-list (append taskone-list sublist))
-(defvar main-list)
+(format t "Appending list ~a~%" combined-list)
 ```
 
 #### Результати тестування
@@ -107,6 +107,7 @@ Third elem check: T
 Fourth elem check: T
 Fourth elem check: NIL
 Is 1 equal to zero? NIL
+Appending list (A 1 (1 2) NIL B 1 2)
 ```
 
 ## Варіант 3
@@ -115,6 +116,7 @@ Is 1 equal to zero? NIL
 </p>
 
 ```lisp
+(defvar main-list)
 (setq sublist (list 3 'c 'b))
 (setq main-list (list 1 'a (last sublist) sublist))
 (format t "~a~%" main-list)
